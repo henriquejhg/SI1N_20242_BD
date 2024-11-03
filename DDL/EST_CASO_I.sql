@@ -105,3 +105,10 @@ CONSTRAINT FRPR_FK_FORNECEDORES FOREIGN KEY(FRPR_FORNECEDOR)
 REFERENCES FORNECEDORES(FORNEC_COD),
 CONSTRAINT FRPR_FK_PRODUTOS FOREIGN KEY(FRPR_PRODUTOS) 
 REFERENCES PRODUTOS(PROD_COD));
+
+#TODOS OS ALTS AI 
+alter table fornecedores add cor_produto varchar (10);
+alter table filias drop column filial_rua;
+alter table produtos modify column liquido varchar(10);
+alter table pedidos change column ped_data ped_cor varchar(13);
+alter table recebimentos add satisfacao varchar(10);
