@@ -112,3 +112,6 @@ alter table filias drop column filial_rua;
 alter table produtos modify column liquido varchar(10);
 alter table pedidos change column ped_data ped_cor varchar(13);
 alter table recebimentos add satisfacao varchar(10);
+
+#DROP 
+Drop table pedidos;
