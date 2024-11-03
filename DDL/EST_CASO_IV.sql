@@ -1,5 +1,10 @@
+#criando banco
 create schema estcasoiv;
+
+#usando o banco
 use estcasoiv;
+
+#criando tabela alunos
 create table if not exists alunos(
 id int primary key,
 nome varchar(30) not null,
@@ -8,14 +13,17 @@ data_nascimento date not null,
 endereco varchar(50) not null,
 modalidade varchar(20) not null);
 
+#criando tabela instrutores
 create table if not exists instrutores(
 id int primary key,
 nome varchar (50) not null);
 
+#criando tabela modalidades
 create table if not exists modalidades(
 id int primary key,
 nome varchar (50) not null);
 
+#criando tabela plano de treinamentos
 create table if not exists planos_treinamento(
 idPlano INT PRIMARY KEY,
 idAluno INT,
@@ -25,6 +33,7 @@ data_atualizacao DATE,
 constraint fk_aluno FOREIGN KEY (idAluno) REFERENCES Alunos(id_aluno),
 constraint fk_instrutor FOREIGN KEY (idInstrutor) REFERENCES Instrutores(id_instrutor));
 
+#criando tabela aulas
 create table if not exists aulas(
 ID_aula INT primary key,
 HORARIO TIME NOT NULL,
@@ -35,6 +44,7 @@ id_instrutor int,
 constraint fk_modalidade foreign key (id_modalidade) references modalidades(id_),
 constraint fk_instrutor foreign key (id_instrutor) references instrutores(id));
 
+#criando tabela pagamentos
 create table if not exists pagamentos(
 id_pagamento int primary key,
 data_pagamento date not null,
@@ -55,4 +65,3 @@ alter table pagamentos add form_pagamento varchar(10);
 
 #DROP da tabela
 drop table planos_treinamento;
-
