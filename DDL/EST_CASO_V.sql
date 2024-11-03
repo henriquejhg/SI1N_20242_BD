@@ -5,7 +5,7 @@ create schema EC5_SI1N;
 use EC5_SI1N;
 
 #criando tabela cliente
-create table  clientes(
+create table if not exists clientes(
 id_cli int primary key,
 nome_cli varchar(20) not null,
 cpf_cli int not null,
@@ -23,7 +23,7 @@ constraint fk_id_pag foreign key (id_pagamentos) references pagamentos(id_pag)
 );
 
 #criando tabela produtos
-create table produtos(
+create table if not exists produtos(
 id_prod int primary key,
 cat_prod varchar(10) not null,
 disp_prod int not null,
@@ -33,7 +33,7 @@ constraint fk_id_fornec foreign key (id_fornec) references fornecedores (id_forn
 );
 
 #criando tabela fornecedores
-create table fornecedores(
+create table if not exists fornecedores(
 id_fornec int primary key,
 nome_fornec varchar(20) not null,
 tel_fornec varchar(12),
@@ -43,7 +43,7 @@ constraint fk_id_prod foreign key (id_prod) references produtos (id_prod)
 );
 
 #criando tabela vendas
-create table vendas(
+create table if not exists vendas(
 id_vend int primary key,
 quant_vend varchar(10) not null,
 id_prod int not null,
@@ -55,7 +55,7 @@ constraint fk_id_fornec foreign key (id_cli) references clientes(id_cli)
 );
 
 #criando tabela pagamentos
-create table pagamentos(
+create table if not exists pagamentos(
 id_pag int primary key,
 form_pag varchar (10) not null,
 id_prod int not null,
