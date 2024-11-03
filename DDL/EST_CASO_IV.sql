@@ -59,9 +59,9 @@ status enum('pago','pendente')
 alter table alunos add responsaveis varchar(20);
 alter table instrutores drop column id;
 alter table modalidades modify column id varchar (200);
-alter table planos_treinamento change column idaluno id_aluno int primary key;
-alter table aulas add turno varchar(10);
-alter table pagamentos add form_pagamento varchar(10);
+alter table planos_treinamento change column descricao contexto varchar(200);
+alter table aulas add equipamentos varchar(10);
+alter table pagamentos add moeda_pagamento varchar(10);
 
 #DROP da tabela
-drop table planos_treinamento;
+drop table aulas;
