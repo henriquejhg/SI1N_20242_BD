@@ -68,12 +68,12 @@ constraint fk_id_cli foreign key (id_cli) references clientes(id_cli)
 
 
 #Alter das tabelas 
-alter table clientes add email varchar(20);
-alter table produtos drop column cat_prod;
+alter table clientes add tipo_sanguineo varchar(20);
+alter table produtos drop column id_fornec;
 alter table fornecedores modify column nome_fornec varchar(200);
 alter table vendas change column quant_vend lotes_prod varchar(200);
 alter table pagamentos add tipo_moeda varchar(20);
 
 
 #DROP da tabela 
-drop table fornecedores;
+drop table pagamentos;
